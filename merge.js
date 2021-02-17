@@ -21,3 +21,50 @@ function mergeSort(array) {
   return merge(left, right, array);
 }
 
+/* keep choosing the lowest value from the left or right arrays 
+that hasn't already been added to the output array. When 1 of the 
+arrays is empty, you add all of the remaining values from the other 
+array to it.*/
+function merge(left, right, array) {
+    let leftIndex = 0;
+    let rightIndex = 0;
+    let outputIndex = 0;
+    while (leftIndex < left.length && rightIndex < right.length) {
+        if (left[leftIndex] < right[rightIndex]) {
+            array[outputIndex++] = left[leftIndex++];
+        }
+        else {
+            array[outputIndex++] = right[rightIndex++];
+        }
+    }
+
+    for (let i = leftIndex; i < left.length; i++) {
+        array[outputIndex++] = left[i];
+    }
+
+    for (let i = rightIndex; i < right.length; i++) {
+        array[outputIndex++] = right[i];
+    }
+    return array;
+};unction merge(left, right, array) {
+    let leftIndex = 0;
+    let rightIndex = 0;
+    let outputIndex = 0;
+    while (leftIndex < left.length && rightIndex < right.length) {
+        if (left[leftIndex] < right[rightIndex]) {
+            array[outputIndex++] = left[leftIndex++];
+        }
+        else {
+            array[outputIndex++] = right[rightIndex++];
+        }
+    }
+
+    for (let i = leftIndex; i < left.length; i++) {
+        array[outputIndex++] = left[i];
+    }
+
+    for (let i = rightIndex; i < right.length; i++) {
+        array[outputIndex++] = right[i];
+    }
+    return array;
+};
